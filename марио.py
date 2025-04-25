@@ -21,7 +21,7 @@ class GS(sprite.Sprite):
         self.isJump = False
         self.onground = False
         self.y_vel = 0
-        self.gravity = 0.4
+        self.gravity = 0.55
         self.prev_y = pl_y
         
     def reset(self):
@@ -34,6 +34,7 @@ class GS(sprite.Sprite):
             self.rect.x -= self.speed
         if keys_press[K_d] and self.rect.x < width - 80:
             self.rect.x += self.speed
+
         self.y_vel += self.gravity
         self.rect.y += self.y_vel
         self.onground = False
